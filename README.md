@@ -109,6 +109,10 @@ systemctl status nexus
 
 - create certificate
 
+```
+mkdir ~/cert-nexus && cd ~/cert-nexus
+```
+
 - create certificate root
 ```
 openssl genrsa -out root.key 2048

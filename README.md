@@ -126,12 +126,14 @@ mkdir ~/cert-nexus && cd ~/cert-nexus
 openssl genrsa -out root.key 2048
 openssl req -x509 -new -nodes -key root.key -out root.crt -sha256 -days 3650
 ```
+![image](https://github.com/galihtw04/nexus-registry/assets/96242740/5caa1836-05b7-4893-8469-8870a53219ec)
 
 - create certificate server
 ```
 openssl genrsa -out nexus.key 2048
-openssl req -new -key nexus.key 2048 -out nexus.csr 
+openssl req -new -key nexus.key -out nexus.csr 
 ```
+![image](https://github.com/galihtw04/nexus-registry/assets/96242740/a44ad23d-71f7-4825-aa0f-6d49ac90eed8)
 
 - create extension
 ```
@@ -160,8 +162,34 @@ openssl x509 -in root.crt -enddate -noout
 openssl x509 -in nexus.crt -text -noout
 openssl x509 -in nexus.crt -enddate -noout
 ```
+![image](https://github.com/galihtw04/nexus-registry/assets/96242740/85d8840c-37fe-4652-9ad1-53a754741e13)
+![image](https://github.com/galihtw04/nexus-registry/assets/96242740/4cdacb03-8300-4633-8aa7-f1a2703aa76e)
+
+![image](https://github.com/galihtw04/nexus-registry/assets/96242740/ddf88e59-2dea-490b-b33b-bab586229fb1)
+![image](https://github.com/galihtw04/nexus-registry/assets/96242740/7435c4fc-5fdf-4ee1-8869-2630607ba3ec)
+
+convert certificate server to PKCS12
+```
+keytool -importkeystore -srckeystore nexus.p12 -srcstoretype PKCS12 \ 
+-srcstorepass password -alias admin -deststorepass password \ 
+-destkeypass password -destkeystore /etc/nexus/etc/ssl/keystore.jks 
+ 
+keytool -importkeystore -srckeystore /etc/nexus/etc/ssl/keystore.jks \ 
+-srcstorepass password -destkeystore /etc/nexus/etc/ssl/keystore.jks \ 
+-deststoretype pkcs12
+```
+![image](https://github.com/galihtw04/nexus-registry/assets/96242740/8a994e06-152e-4cf2-b23d-94bf542ba72f)
+
+```
+chown -R nexus:nexus /etc/nexus/
+```
 
 - edit file /etc/nexus/etc/nexus-default.properties to enable https
+
+```
+nano /etc/nexus/etc/nexus-default.properties
+```
+
 ```
 ---
 application-port-ssl=8443
@@ -170,8 +198,14 @@ ssl.etc=/etc/nexus/etc/ssl
 ---
 
 ```
+![image](https://github.com/galihtw04/nexus-registry/assets/96242740/6d7d3913-7fb0-42b9-b65b-0e32de6f5a81)
+
 
 - restart neuxs
 ```
 systemctl restart nexus
 ```
+
+access nexus
+![image](https://github.com/galihtw04/nexus-registry/assets/96242740/29f6a1ed-7da2-4a46-826b-f54a5edaafd0)
+> untuk sigin user admin password bisa di cek /data-nexus/admin.password

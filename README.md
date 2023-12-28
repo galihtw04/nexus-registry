@@ -111,6 +111,7 @@ systemctl start nexus
 systemctl enable nexus
 systemctl status nexus
 ```
+![image](https://github.com/galihtw04/nexus-registry/assets/96242740/d49844ee-e5ed-4042-a683-65464228675e)
 
 # # enabling https nexus
 

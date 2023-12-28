@@ -2,6 +2,7 @@
 
 - create directory
 ```
+mkdir /etc/nexus
 mkdir /data-nexus
 ```
 

@@ -4,6 +4,7 @@
 - create repository docker
 ![image](https://github.com/galihtw04/nexus-registry/assets/96242740/d0ca1998-e028-40aa-87f3-902eb3fc0e9b)
 ![image](https://github.com/galihtw04/nexus-registry/assets/96242740/00e264ea-2b61-44cf-9c54-21186bd2200a)
+
 ![image](https://github.com/galihtw04/nexus-registry/assets/96242740/1cad19ba-f336-42fe-aa12-ce851ae219c2)
 
 - install & set haproxy

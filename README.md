@@ -50,6 +50,11 @@ EOF
 ```
 
 - edit file /etc/nexus/bin/nexus.vmoptions
+
+```
+nano /etc/nexus/bin/nexus.vmoptions
+```
+
 ```
 -Xms2703m
 -Xmx2703m

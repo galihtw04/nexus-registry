@@ -16,7 +16,7 @@ apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release gi
 
 ```
 wget https://download.sonatype.com/nexus/3/nexus-3.63.0-01-unix.tar.gz
-tar xzf nexus-3.63.0-01-unix.tar.gz -C /etc/nexus/ --strip-components 1 && mv /etc/nexus/nexus/* /data/nexus && rm -rf /etc/nexus/nexus && rm nexus-3.63.0-01-unix.tar.gz
+tar xzf nexus-3.63.0-01-unix.tar.gz -C /etc/nexus/ --strip-components 1 && mv /etc/nexus/nexus3/* /data-nexus && rm -rf /etc/nexus/nexus3 && rm nexus-3.63.0-01-unix.tar.gz
 ```
 
 - create user

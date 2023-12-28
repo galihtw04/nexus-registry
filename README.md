@@ -98,6 +98,7 @@ nano /etc/nexus/bin/nexus.vmoptions
 #
 -Djava.endorsed.dirs=lib/endorsed
 ```
+![image](https://github.com/galihtw04/nexus-registry/assets/96242740/d0ab3d6a-b848-41cd-8776-6c19052234aa)
 
 - create new directory
 ```

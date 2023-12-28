@@ -24,7 +24,7 @@ tar xzf nexus-3.63.0-01-unix.tar.gz -C /etc/nexus/ --strip-components 1 && mv /e
 > user ini yang akan digunakan untuk nexus
 ```
 useradd --system --no-create-home nexus
-chown -R nexus:nexus /data/nexus
+chown -R nexus:nexus /data-nexus
 chown -R nexus:nexus /etc/nexus
 ```
 
